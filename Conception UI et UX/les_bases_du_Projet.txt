@@ -1,0 +1,19 @@
+Creation de site de gestion d'ecole/universite
+
+1) les principes de bases du projets
+    creation de site
+        - creation de site fonctionnelle et facile a utilise
+        - creation de base de donne pour conservation de donne
+
+
+a) Creation de site fonctionnelle et facile a utilise
+    a - 1 - repondre a tous les fonctionnalite du produit
+    => Dans le fichier .txt les fonctionnalite
+
+    a - 2 - respecter les UI et UX (Mbola tsy aiko ity)
+    a - 3 - conception visuel avec des outils du projets (photoshop ou autre outils)
+    a - 4 - creation des premiers pages avec le techno choisis
+
+b) Creation de base de donne :
+    b - 1 - Utilisation de techno | SQL
+    b - 2 - relier la base de donne au front end

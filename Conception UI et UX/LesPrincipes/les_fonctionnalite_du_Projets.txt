@@ -1,0 +1,91 @@
+Repondre a tous les fonctionnalite du produit
+
+1) Base :
+    - Creation God
+        * Creation Table SiteGod
+            => Nom , Prenom , Mot_de_passe1 , Mot_de_Passe2 , photo
+        * Personnalisation absolus de la direction 
+            . Ajout de tous les personnels Administratif
+            . Possibilites de gestion des formations 
+            . Voir tous les modifications fais par le dite Emploies
+        * Pages Personnels de Modification absolus
+            . Creation table de tous les entites Administratif / avec Salaire .
+            
+    - securisation du site | les plus boostees possibles
+        . creation de login Administratif
+            * peut encore se categoriser en plusieur partie (selon le hierarchie d'une entreprise)
+        . creation de login Eleve
+
+    - Creation de CRUD Cote formation 
+        . Diplome/Certificat (avec direct des conditionnement a respecter pour l'obtention)
+            * Listage de tous les Diplomes Obtenable
+        . Formation
+            * Creation de table Formation 
+                => Formation_Name ,Duree , Heure a Respecte, Diplome obtenable du Formation (Creation de Table specifique)
+            * Relier au niveau / modul
+        . Modul / Niveau
+            * Creation de Table modul
+                => Modul_Name, Condition a respecter,
+    
+    - Creation de CRUD cote Administratif
+        . Direction
+            
+        . Eleve
+            * Creation Table Eleve
+                => Nom , Prenom , Ages , Sexe , Photo , Statue dossier , Types de Formation
+            * Relier a tous les formations 
+            * Creation de table Ecolage
+                => Eleve (forgeinKey) , Mois , Statue
+            * Creation Table absence
+                => Eleve (forgeinKey), Mois , Nombre d'absence , Motifs
+            * Creation de Table Diplome (Avec des possibilites de change de formation selon certain condition)
+                => Eleve (forgeinKey), Mois d'obtention , Note , Observation 
+            * Creation de Table Modul 
+                => Eleve (forgeinKey) , Modul_actuelle , Mois
+
+        . Prof 
+            * Creation Table Prof
+                => Nom , Prenom , Ages , CIN , Adress , photo , Dossier Status , Duree du contrat
+            * Creation Table absence 
+                => Prof , Mois , Nbr_Absence, Motifs
+            * Creation Table Payement
+                => Prof , Mois , Status
+            * Creation Table Commentaire
+                => Prof , commentaire 
+            * Creation Statue 
+                => Prof , Encore_Actif_Ou_Pas
+
+    - Creation de Emplois du temps Automatique et interchangable
+        . Creation d'une resume binaire de chaque emplois du temps mensuelle
+        . Creation de front reactif et facilement lisible
+        . Creation automatique d'emplois du temps (resume)
+        . Creation d'E_d_T pour chaque Eleve
+        . Possibilite de change et de mettre une mise a jours de chaque personne et en globalite
+
+    - Creation systems d'alerte pour chaque information 
+        . Pour ecolage en retard 
+        . Pour Prof en 
+        . Reclamation des eleves
+    
+    - Creation pages qui montre tous les formations disponible dans l'etablissement
+
+2) Details des bases :
+    - Creation de facturation pour les defferentes types de paiement 
+        . Eleve
+        . Prof 
+        . Administratif
+    - Creation DashBoard cote Administratif
+
+    - Creation Compte Eleve 
+        . Donne une numero de matriculation unique pour chaque eleve/ lire une code QR
+        . Tres limite. capable de voir une emplois du personnels et globale.
+        . peut note et critique un Prof
+    - integration de IA(fait maison biensur) pour recherche intelligente et pour peut etre reponse automatique
+
+3) details du code:
+    - Structuration claire et minimaliste mais robuste/scalable facilement
+        . Categorisation claire de chaque tache et de chaque fonctionnalite
+        . Creation de code robuste et 80% humain . aide externe seulement sur des modules ou fonction encore inconnus
+        . 0% de code generer par IA utilise .Par contre , pour nous ameliorer , l'Ai sera note maitre sur certain modules
+    - Creation de compte github pour + de maintenabilite et pour assurer le Cv
+    

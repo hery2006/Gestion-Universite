@@ -1,0 +1,143 @@
+{% extends "layouts/MainPages.html" %}
+{% load static %}
+    
+{% block contenu %}
+
+    <section class="FirstSectionFile">
+        <div class="NuageCountainers">
+            <div class="CountainerPagesOne">
+                <p class="TitleWelcome">Bienvenus</p>
+                <p> Nous somme ravis de vous recevoir <br>sur notre site de gestion Universitaire</p>
+                <a class="VPLusa1">Voir Plus</a>
+            </div>
+        </div>
+        <div class="PhotoCountainers" >
+            <div class="ImageCountainer">
+                <img src="/static/Images/SiteImage/IMG_4491.JPG" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="SecondSectionBigCountainers">
+        <div class="FormationCountainers" data-aos="zoom-in">
+            <div class="FormationImageCountainers">
+                <img src="" alt="">
+            </div>
+            <div class="TextFolderCountainers">
+                <p>Formations</p>
+                <p>Vous pourvez consulter ici <br> les informations concernant <br> toutes les formations</p>
+                <a href="{% url "Formations" %}">A propos</a>
+            </div>
+        </div>
+        <div class="ElevesCountainers" data-aos="zoom-in">
+            <div class="EleveImageCountainers">
+                <img src="" alt="">
+            </div>
+            <div class="EleveFolderCountainers">
+                <p>Eleves</p>
+                <p>Vous pourvez consulter ici <br> les informations concernant <br> toutes les eleves</p>
+                <a href="{% url "E_MainPages" %}">A propos</a>
+            </div>
+        </div>
+        <div class="Professeurcountainers" data-aos="zoom-in">
+            <div class="ProfesseurImageCountainers" >
+                <img src="" alt="">
+            </div>
+            <div class="ProfesseurFolderCountainers">
+                <p>Professeurs</p>
+                <p>Vous pourvez consulter ici <br> les informations concernant <br> toutes les Professeurs</p>
+                <a>A propos</a>
+            </div>
+        </div>
+    </section>
+    <!-- Tableau section  -->
+    <section class="MainTablesSection">
+        <h1> Emplois du Temps </h1>
+        <div class="TableMainCountainers">
+            <table class="MainEmploisTempsTable">
+                <thead>
+                    <tr>
+                        <th>Heure</th>
+                        <th>Lundi</th>
+                        <th>Mardi</th>
+                        <th>Mercredi</th>
+                        <th>Jeudi</th>
+                        <th>Vendredi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>
+                            <h2>Actif</h2>
+                            <p>Status : Plein</p>
+                            <br>
+                            <a>Details</a>
+                        </th>
+                        <th><h2>Libre</h2></th>
+                        <th><h2>Libre</h2></th>
+                        <th><h2>Libre</h2></th>
+                        <th><h2>Libre</h2></th>
+                    </tr>
+                    <tr>
+                        <th colspan="6"></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th><h2>Libre</h2></th>
+                        <th>
+                            <h2>Actif</h2>
+                            <p>Status : Plein</p>
+                            <br>
+                            <a>Details</a>
+                        </th>
+                        <th>
+                            <h2>Actif</h2>
+                            <p>Status : Plein</p>
+                            <br>
+                            <a>Details</a>
+                        </th>
+                        <th>
+                            <h2>Actif</h2>
+                            <p>Status : Plein</p>
+                            <br>
+                            <a>Details</a>
+                        </th>
+                        <th><h2>Libre</h2></th>
+                    </tr>
+                    <tr>
+                        <th colspan="6"></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th><h2>Libre</h2></th>
+                        <th><h2>Libre</h2></th>
+                        <th><h2>Libre</h2></th>
+                        <th><h2>Libre</h2></th>
+                        <th><h2>Libre</h2></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="StatistiqueMainSection">
+        <h1>Statistique</h1>
+        <div class="MainStatCountainers">
+            <div class="SwitchCountainers">
+                <p>Analyse et soit pret pour les decision <br> important via les graphique claires et precis</p>
+                <div class="aSwitch">
+                    <a><i class="fa fa-chevron-circle-left"></i></a>
+                    <div class="CategorieStat">
+                        <p>Nombre d'eleves</p>
+                        <p>Ecolage</p>
+                        <p>Professeurs</p>
+                    </div>
+                    <a><i class="fa fa-chevron-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="FigureStatCountainer">
+                <canvas id="MainFigureId"></canvas>
+                <p>statistique Paiement ecolage</p>
+            </div>
+        </div>
+    </section>
+{% endblock contenu %}

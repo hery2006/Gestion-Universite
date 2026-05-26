@@ -1,0 +1,52 @@
+{% extends "layouts/MainPages.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" href="{% static "css/Formations/Ajouts.css" %}">
+{% endblock style %}
+{% block contenu %}
+<section class="FA_MainSection">
+    <a href="" id="UrlTake" data-formation-url="{% url "F_Load" %}" style="display: none;"></a>
+    <div class="FA_MinNav">
+        <a href="{% url "Formations" %}">Retour</a>
+        <a href=""><i class="fa fa-rotate-right"></i></a>
+        <a href="" id="FormationsSave"><i class="fa fa-download"></i></a>
+    </div>
+    <form class="FA_MainDivCountainer" method="post" data-url="{% url "F_Save" %}" id="FAForm">
+        {% csrf_token %}
+        <div class="FA_Formulaire" >
+            <label for="" style="display:block;">
+                <p style="width: 100%;text-transform: uppercase;">Formations</p>
+                <p style="width: 100%;font-size:12px;font-weight:bold;color: red;" id="MainErrors"></p>
+            </label>
+            <label>
+                <p>Nom</p>
+                <input type="text" name="FA_Nom">
+            </label>
+            <label>
+                <p>Categorie</p>
+                <input type="text" name="FA_Categorie">
+            </label>
+            <label>
+                <p>Duree</p>
+                <input type="text" name="FA_Duree">
+            </label>
+            <label>
+                <p>Nombre de diplome</p>
+                <input type="text" name="FA_Diplome">
+            </label>
+            <label>
+                <p>Nombre d'heure a respecter</p>
+                <input type="text" name="FA_RHeure">
+            </label>
+        </div>
+        <div class="FA_Diplome">
+            {% for D in Diplome %}
+                <div class="{{D.Nom}}">
+                    <p>{{D.Nom}}</p><input type="checkbox" value="{{D.Nom}}" name="{{D.Nom}}">
+                </div>
+            {% endfor %}
+        </div>
+    </form>
+</section>
+<script src="{% static "js/Formations/Save.js" %}?v=2"></script>
+{% endblock contenu %}

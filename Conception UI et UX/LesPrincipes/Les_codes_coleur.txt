@@ -1,0 +1,20 @@
+Pour un site universitaire, privilégiez une palette sobre et 
+professionnelle, utilisant la règle 60-30-10 : 60% de couleur 
+neutre (blanc/gris clair/beige) pour le fond, 30% de couleur 
+primaire institutionnelle (bleu marine, vert foncé, bordeaux) pour 
+la structure, et 10% d'une couleur vive (orange, jaune, bleu 
+électrique) pour les appels à l'action
+. 
+Palettes recommandées pour l'univers universitaire :
+
+    Classique & Institutionnel : Bleu marine (confiance), beige amande, et une touche de bordeaux ou de doré pour les éléments clés.
+    Moderne & Dynamique : Gris ardoise foncé, blanc, et des accents d'orange ou de vert émeraude pour dynamiser.
+    Sérieux & Accessible : Blanc, bleu roi, et touches de jaune pour la luminosité. 
+
+Conseils clés :
+
+    Utilisez des tons neutres pour 60% de la page afin d'assurer la lisibilité.
+    La couleur d'accent (10%) sert à attirer l'attention sur les boutons (inscription, contact).
+    Le bleu est idéal pour inspirer confiance et sérieux.
+    Le vert peut être utilisé pour évoquer le développement et la croissance. 
+

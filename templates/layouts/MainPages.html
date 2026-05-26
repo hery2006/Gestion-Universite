@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hery University</title>
+    <link rel="stylesheet" href="{% static 'css/PagesPrincipales/MainCountainersFooter.css' %}">
+    <link rel="stylesheet" href="{% static 'css/PagesPrincipales/MainCountainersStat.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-6.1.1-web/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/PagesPrincipales/MainCountainers.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-free-6.1.1-web/css/aos.css' %}">
+    {% block style %}{% endblock style %}
+</head>
+<body>
+    {% include "layouts/header.html" %}
+
+    {% block contenu %}
+      
+    {% endblock contenu %}
+
+    {% include "layouts/Footer.html" %}
+    
+    <script src="/static/css/fontawesome-free-6.1.1-web/js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="/static/js/chart.js-4.5.1/package/dist/chart.umd.js"></script>
+    <script src="/static/js/MainFigure.js"></script>
+</body>
+</html>

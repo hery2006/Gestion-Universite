@@ -1,0 +1,70 @@
+{% extends "layouts/MainPages.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="/static/css/Eleve/Modification.css">
+{% endblock style %}
+{% block contenu %}
+    <section class="EM_MainCountainers">
+        <!-- urls cache pour certaine fonction -->
+        <a href="" data-url="{% url "EAfficheEleve" %}" style="display: none;" id="HiddenUrls"></a>
+        <!-- fin de celle-ci -->
+        <div class="EM_NavMin">
+            <a href="{% url "E_MainPages" %}" class="EM_Nouveau"> Retour </a>
+            <form class="EM_Re_recherche" method="post" data-url="" id="EM_Recherche">
+                {% csrf_token %}
+                <input type="text" placeholder="recherche......" name="FA_Recherche"><a href="" class="EM_Lunette" id="EM_Lunette"><i class="fa fa-search"></i></a>
+            </form>
+            <div class="EM_StyleList">
+                <p>Total eleve : {{ EleveCount }}</p>
+            </div>
+        </div>
+        <div class="EM_MainDiv">
+            <div class="EM_TABLEDIV">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Sexe</th>
+                            <th>Photo</th>
+                            <th>Status dossier</th>
+                            <th>Module en cours</th>
+                            <th>Manipulation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if EleveDB %}
+                            {% for j in EleveDB %}
+                                <tr>
+                                    <td>{{ j.Nom }}</td>
+                                    <td>{{ j.Prenom }}</td>
+                                    <td>{{ j.Sexe }}</td>
+                                    <td>{{ j.Image }}</td>
+                                    <td>{% if j.Dossier %}
+                                        Dossier complet
+                                        {% else %}
+                                        Dossier non complet
+                                        {% endif %}</td>
+                                    <td>{{ j.Parcours.Nom }}</td>
+                                    <td>
+                                        <div class="EM_Manipulation">
+                                            <a href="{% url 'Edelete' j.id %}"><i class="fa fa-trash"></i></a>
+                                            <a href="{% url "ESeePass" j.id %}"><i class="fa fa-arrow-right"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                                <tr >
+                                    <td colspan="8">Ajouter une eleve</td>
+                                </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="EM_NewPupils">
+                <a href="{% url "EAjout" 0 %}"> Nouveau <i class="fa fa-plus-square"></i></a>
+            </div>
+        </div>
+    </section>
+{% endblock contenu %}

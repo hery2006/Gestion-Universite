@@ -1,0 +1,9 @@
+Front end:
+
+base du front : html, css , js et des frameworks si j'ai le temps 
+
+Back - end:
+
+principalement du Python 
+=> Django 
+mais peut avoir d'autre aide pour mettre un projets booste

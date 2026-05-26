@@ -1,0 +1,61 @@
+{% extends "layouts/MainPages.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/Formations/Formations.css" %}">
+{% endblock style %}
+{% block contenu %}
+    <section class="F_MainSection">
+        <div class="F_NavMin">
+            <a href="{% url "F_Ajout" 0 %}" class="F_Nouveau"> Nouveau </a>
+            <form class="F_Re_recherche" method="post" data-url="{% url "F_recherche" %}" id="F_Recherche">
+                {% csrf_token %}
+                <input type="text" placeholder="recherche......" name="FA_Recherche"><a href="" class="F_Lunette" id="F_Lunette"><i class="fa fa-search"></i></a>
+            </form>
+            <div class="F_StyleList">
+                <a href="" id="Liste_Style"><i class="fa fa-list-ul"></i></a>
+                <a href="" id="Square_Style"><i class="fa fa-th-large"></i></a>
+            </div>
+        </div>
+        <div class="F_MainCountainer">
+            <div class="F_NavListeCountainer">
+                <a href=""><i class="fa fa-circle" style="font-size:12px;"></i> Filtrage <i class="fa fa-caret-right"></i></a>
+            </div>
+            <div class="F_Liste" style="display: none;" id="F_Liste">
+                {% for j in Formations %}
+                    <div class="F_Liste_count">
+                        <p>{{ j.Nom }}</p>
+                        <p>Duree: <strong> {{ j.Duree }} ans </strong></p>
+                        <p>Diplome: <strong>{{ j.Nombre_Diplome }}</strong></p>
+                        <div class="F_utilitaire">
+                            <button href="" id="FButtonDelete" data-url="{% url "F_Delete" j.id %}"><i class="fa fa-trash"></i><button>
+                            <a href="{% url "F_Enter" j.id %}"><i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="F_Liste_2" style="display: none;"  id="F_Liste_2">
+                <a class="F_Liste_count_2" style="z-index: -2;">
+                    <p>Nom</p>
+                    <p>Duree</p>
+                    <p> Diplome </p>
+                    <p>Modification</p>
+                </a>
+                {%  for j in Formations %}
+                <a class="F_Liste_count_2" href="{% url "F_Enter" j.id %}">
+                    <p style="font-weight:bolder;">{{ j.Nom }}</p>
+                    <p><strong> {{ j.Duree }} ans </strong></p>
+                    <p><strong>{{ j.Nombre_Diplome }}</strong></p>   
+                    <button href="" id="FButtonDelete" data-url="{% url "F_Delete" j.id %}">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="F_popupSignale" id="F_Popup" style="display: none;" data-aos="zoom-in">
+                <p id="TheFormationAdd"></p>
+                <p id='TheCatafonction'></p>
+            </div>
+        </div>
+    </section>
+    <script src="{% static "js/FonctionSimple/Formations.js" %}?v=1"></script>
+{% endblock contenu %}

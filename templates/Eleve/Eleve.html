@@ -1,0 +1,27 @@
+{% extends "layouts/MainPages.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="/static/css/Eleve/Eleve.css">
+{% endblock style %}
+{% block contenu %}
+    <section class="E_MainSection">
+        <p class="E_Title">ELEVES :</p>
+        <div class="E_countainer">
+            <div class="E_AjoutPages">
+                <p>Modification</p>
+                <p>Ajoute,supprime,Analyse,modifier vos eleve</p>
+                <a href="{% url "EModification" %}">Entre <i class="fa fa-arrow-right"></i></a>
+            </div>
+            <div class="E_EcolagePages">
+                <p>Ecolage</p>
+                <p>Voir et manipuler les eleves selon le status de leur ecolage</p>
+                <a href="">Entre <i class="fa fa-arrow-right"></i></a>
+            </div>
+            <div class="E_EmploisDuTempsPages">
+                <p>Emplois du temps</p>
+                <p>Voir et manipuler les eleves selon le status de leur ecolage</p>
+                <a href="">Entre <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+{% endblock contenu %}

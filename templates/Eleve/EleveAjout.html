@@ -1,0 +1,83 @@
+{% extends "layouts/MainPages.html" %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/Eleve/Ajout.css" %}">
+{% endblock style %}
+{% block contenu %}
+<section class="EA_MainSection">
+    <a href="" id="UrlTake" data-url="{% url "EAfficheEleve" %}" style="display: none;"></a>
+    <div class="EA_MinNav">
+        <a href="{% url "EModification" %}">Retour</a>
+        <a href=""><i class="fa fa-rotate-right"></i></a>
+        <a href="" id="E_EleveSave">
+            {% if request.session.EleveUpload %}
+                <i class="fa fa-upload"></i>
+            {% else %}
+                <i class="fa fa-download"></i> 
+            {% endif %}</a>
+    </div>
+    <form class="EA_MainDivCountainer" method="post" data-url="{% url "EAjoutSave" %}" id="EAForm">
+        {% csrf_token %}
+        <div class="EA_Formulaire" >
+            <label for="" style="display:block;">
+                <p style="width: 100%;text-transform: uppercase;">Formations</p>
+            </label>
+            <label>
+                <p>Nom</p>
+                <input type="text" name="EA_Nom">
+                <p id="EA_Nom" ></p>
+            </label>
+            <label>
+                <p>Prenom</p>
+                <input type="text" name="EA_Prenom">
+                <p id="EA_Prenom" ></p>
+            </label>
+            <label>
+                <p>Sexe</p>
+                <select name="EA_Sexe" id="">
+                    <option value="Homme"> Homme </option>
+                    <option value="Femme">Femme</option>
+                </select>
+                <p id="EA_Sexe" ></p>
+            </label>
+            <label>
+                <p>Status dossier</p>
+                <select name="EA_Dossier" id="">
+                    <option value="true"> Complet </option>
+                    <option value="false">Pas Complet</option>
+                </select>
+                <p id="EA_Dossier" ></p>
+            </label>
+            <label>
+                <p>Parcours</p>
+                <select name="EA_Parcours" id="">
+                    {% for n in FormationsBd %}
+                    <option value="{{ n.id }}">{{n.Nom}}</option>
+                    {% endfor %}
+                </select>
+                <p id="EA_Parcours" ></p>
+            </label>
+        </div>
+        <div class="EA_PhotoCountainer">
+
+            <div class="EA_Photo">
+
+                <input type="file" name="EA_Photo" id="EA_Photo" accept="image/*">
+
+                <label for="EA_Photo">
+
+                    <img id="PreviewPhoto" src="" alt="not supproted format">
+
+                    <i class="fa fa-cloud-upload" id="UploadIcon"></i>
+
+                    <p id="UploadText">Ajouter une photo</p>
+
+                </label>
+
+            </div>
+
+        </div>
+    </form>
+</section>
+<script src="{% static "js/Eleve/E_Modification.js" %}?v=2"></script>
+{% endblock contenu %}
